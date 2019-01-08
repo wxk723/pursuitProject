@@ -1,7 +1,7 @@
 {
   "name": "pursuitproject",
-  "version": "0.0.1",
-  "description": "build my project",
+  "version": "0.0.2",
+  "description": "init bootstrap",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -3,7 +3,7 @@
 * @Author: 王晓琨
 * @Date: 2019-01-08 11:10:30
  * @Last Modified by: 王晓琨
- * @Last Modified time: 2019-01-08 11:54:34
+ * @Last Modified time: 2019-01-08 16:31:16
 */
 
 "use strict";
@@ -12,7 +12,8 @@ require([
     'layer',
     'resource',
     'common',
-], function (Vue, layer, resource, common) {
+    'bootstrap'
+], function (Vue, layer, resource, common, bootstrap) {
     Vue.use(resource); //Vue注册http请求模板
     var vm = new Vue({
         el: 'section',

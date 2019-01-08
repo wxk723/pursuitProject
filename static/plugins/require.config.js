@@ -11,8 +11,8 @@ requirejs.config({
         swiper:public_domain + '/static/plugins/swiper/swiper.min',//swiper插件
         qrcode: public_domain + '/static/plugins/jquery.qrcode.min',//jq 生成二维码
         easyform:public_domain + '/static/plugins/jQueryEasyform/js/easyform/easyform',//jquery表单验证
-        layDate:public_domain + '/static/plugins/laydate/laydate',//jquery时间插件[好用]
-
+        layDate: public_domain + '/static/plugins/laydate/laydate',//jquery时间插件[好用]
+        bootstrap: public_domain + '/static/plugins/bootstrap/js/bootstrap.min',//bootstrap
     },
     urlArgs: 'bust=' +window.website_version,//清楚缓存用
     shim: {
@@ -29,6 +29,9 @@ requirejs.config({
             deps:['jquery'],
             exports:'easyform'
         },
-
+        'bootstrap': {
+            deps: ['jquery'],
+            exports: 'bootstrap'
+        }
     }
 });
