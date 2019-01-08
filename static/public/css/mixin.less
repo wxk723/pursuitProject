@@ -1,0 +1,115 @@
+/*
+* @Title: mixin工具类
+* @Author: 王晓琨
+* @Date: 2019-01-08 10:38:57
+ * @Last Modified by: 王晓琨
+ * @Last Modified time: 2019-01-08 10:42:16
+*/
+
+
+// 图片hover 放大缩小
+.scale_img() {
+    .scale(1);
+
+    .transition(.5s);
+
+    &:hover {
+        .scale(1.2);
+
+        .transition(.5s);
+    }
+}
+// 旋转
+.rotate(@deg) {
+    -webkit-transform: rotate(@deg); /* Safari 和 Chrome */
+       -moz-transform: rotate(@deg); 	/* Firefox */
+        -ms-transform: rotate(@deg); 	/* IE 9 */
+         -o-transform: rotate(@deg); 	/* Opera */
+            transform: rotate(@deg);
+}
+// 关闭x号旋转
+.rotate-close-btn() {
+    transition: all cubic-bezier(.22, .58, .12, .98) .4s;
+    transform: rotate(0deg) scale(1);
+    -ms-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+    &:hover {
+        -ms-transform: rotate(180deg) scale(1);
+            transform: rotate(180deg) scale(1);
+    }
+}
+// 动效时间
+.transition(@time) {
+    -webkit-transition: all @time; /* Safari and Chrome */
+       -moz-transition: all @time; /* Firefox 4 */
+         -o-transition: all @time; /* Opera */
+            transition: all @time;
+}
+.scale(@num) {
+    -webkit-transform: scale(@num);
+       -moz-transform: scale(@num);
+        -ms-transform: scale(@num);
+         -o-transform: scale(@num);
+            transform: scale(@num);
+}
+.transform (@time) {
+    -webkit-transition: -webkit-transform @time;
+       -moz-transition:    -moz-transform @time;
+         -o-transition:      -o-transform @time;
+            transition:         transform @time;
+}
+// 背景图 位置 0 0，大小 100% 100%
+.background-image(@url) {
+    background-image: url(@url);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 100% 100%;
+}
+
+// 单行省略
+.sigle-ellipsis() {
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+// 多行省略
+.ellipsis(@line) {
+    display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
+    overflow: hidden;  /** 隐藏超出的内容 **/
+
+    text-overflow: ellipsis;
+    word-break: break-all;
+
+    -webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+    -webkit-line-clamp: @line; /** 显示的行数 **/
+}
+//placeholder 颜色
+.input-placeholder (@color) {
+    input::-webkit-input-placeholder {
+        color: @color;
+    }
+    　　input:-moz-placeholder {
+        color: @color;
+    }
+    　　input::-moz-placeholder {
+        color: @color;
+    }
+    　　input:-ms-input-placeholder {
+        color: @color;
+    }
+}
+.textarea-placeholder (@color) {
+    textarea::-webkit-input-placeholder {
+        color: @color;
+    }
+    textarea:-moz-placeholder {
+        color: @color;
+    }
+    textarea::-moz-placeholder {
+        color: @color;
+    }
+    textarea:-ms-input-placeholder {
+        color: @color;
+    }
+}
