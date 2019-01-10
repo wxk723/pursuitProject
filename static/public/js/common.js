@@ -3,20 +3,16 @@
 * @Author: 王晓琨
 * @Date: 2019-01-08 10:47:28
  * @Last Modified by: 王晓琨
- * @Last Modified time: 2019-01-08 11:58:03
+ * @Last Modified time: 2019-01-10 11:50:26
 */
-/**
- * 公共方法
- * Created by 刘万顺 on 2017/11/7.
- */
 "use strict";
 define([
     'vue',
     'layer',
-    // 'laypage',
-], function (Vue, layer) {
+    'jquery'
+], function (Vue, layer, $) {
 
-    
+
 
     var modal = {
         //ajaxurl域名路径
@@ -43,7 +39,7 @@ define([
                 return false;
             };
         },
-        
+
         /**
          *设置缓存
          *
@@ -92,7 +88,7 @@ define([
             };
             return returnstr(year) + "-" + returnstr(month) + "-" + returnstr(date) + ' ' + returnstr(hour) + ":" + returnstr(minute) + ":" + returnstr(miao);
         },
-        
+
         //表单验证通用{type:"mobile",el:"#mobile",parset:"#test1",L:100,T:100,value:15890611985,time:1000}
         form_Verification: function (options) {
             /* 示例
@@ -296,6 +292,61 @@ define([
                 return count;
             });
         },
+        /**
+         *是否拥有class
+         *
+         * @param {*} elem
+         * @param {*} cls
+         * @returns
+         */
+        hasClass: function (elem, cls) {
+            cls = cls || '';
+            if (cls.replace(/\s/g, '').length == 0) return false; //当cls没有参数时，返回false
+            return new RegExp(' ' + cls + ' ').test(' ' + elem.className + ' ');
+        },
+        /**
+         *添加class
+         *
+         * @param {*} elem
+         * @param {*} cls
+         */
+        addClass: function (elem, cls) {
+            if (!modal.hasClass(elem, cls)) {
+                elem.className = elem.className == '' ? cls : elem.className + ' ' + cls;
+            }
+        },
+        /**
+         *删除class
+         *
+         * @param {*} elem
+         * @param {*} cls
+         */
+        removeClass: function (elem, cls) {
+            if (modal.hasClass(elem, cls)) {
+                var newClass = ' ' + elem.className.replace(/[\t\r\n]/g, '') + ' ';
+                while (newClass.indexOf(' ' + cls + ' ') >= 0) {
+                    newClass = newClass.replace(' ' + cls + ' ', ' ');
+                }
+                elem.className = newClass.replace(/^\s+|\s+$/g, '');
+            }
+        },
+        /**
+         *数组去除重复数据
+         *
+         * @param {*} arr
+         * @returns
+         */
+        deduplication: function (arr) {
+            var newArray = [];
+            for (var i = 0; i < arr.length; i++) {
+
+                var items = arr[i];
+                if ($.inArray(items, newArray) == -1) {
+                    newArray.push(items)
+                }
+            }
+            return newArray;
+        }
     };
     return modal;
 }

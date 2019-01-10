@@ -4,10 +4,79 @@
 * @Author: 王晓琨
 * @Date: 2019-01-08 10:37:18
  * @Last Modified by: 王晓琨
- * @Last Modified time: 2019-01-08 11:13:59
+ * @Last Modified time: 2019-01-10 11:53:08
 */
+body,
+ol,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+th,
+td,
+dl,
+dd,
+form,
+fieldset,
+legend,
+input,
+textarea,
+select {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font: 14px 'Microsoft YaHei', 'Arial Narrow', HELVETICA;
+  color: #333;
+  /*box-sizing:border-box;*/
+  background: #fff;
+  -webkit-text-size-adjust: 100%;
+}
+a {
+  text-decoration: none;
+  color: #172c45;
+}
+/*a:hover{color:#ff425c;}*/
+em {
+  font-style: normal;
+}
+li {
+  list-style: none;
+}
+img {
+  vertical-align: middle;
+  border: 0;
+}
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+p {
+  word-wrap: break-word;
+}
+.show_none {
+  display: none !important;
+}
+/*去掉input number类型的小箭头*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  margin: 0;
+  -webkit-appearance: none !important;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+[v-cloak] {
+  /*头部未渲染出来的先隐藏出来后显示（避免闪屏）*/
+  display: none !important;
+}
 img {
   max-width: 100%;
+  max-height: 100%;
 }
 .wai {
   display: table;
@@ -29,17 +98,22 @@ img {
   max-width: 100%;
   max-height: 100%;
 }
+a {
+  transition: all .35s ease 0s;
+  text-decoration: none;
+  color: #222;
+}
 /*针对表单验证提示信息样式*/
 .Prompt_msg_style {
   position: absolute;
   z-index: 5;
   height: 20px;
+  padding: 0 10px;
+  font-size: 12px;
   line-height: 20px;
+  color: red;
   border: solid 1px #ffe7cf;
   border-radius: 3px;
-  font-size: 12px;
-  color: red;
   background: #fff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  padding: 0 10px;
 }

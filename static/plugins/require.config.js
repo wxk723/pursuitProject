@@ -1,4 +1,4 @@
-window.public_domain = 'http://jw.com';
+window.public_domain = 'https://wxk723.github.io/pursuitProject';
 window.website_version = '201901081034'
 requirejs.config({
     paths:{
