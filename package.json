@@ -1,6 +1,6 @@
 {
   "name": "pursuitproject",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "init bootstrap",
   "main": "index.js",
   "scripts": {
